@@ -1,0 +1,30 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1EWXhNVEU1TVRnMU9Wb1hEVE14TURZd09URTVNVGcxT1Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT0xkCkNNUlFqcEdVelg4U2V2eVRlZW1aNnNaeVZzOU1TZUxkYVR0dGd4WTJTZWxnRHFiSFc1blJ1ZStvZldpNXhZdmcKc3NrdkVJbkx6MHd1ZVQ1aVVIMG9UTEQreWQzNEhjQnJtWGdxckFKSGhCeWJqYlJnbG51WGVzOHE4UENCczh3cQpoSkp1QlNpYk5xZjdManV2OUdaNmF3aVFBeXk1M2ZtWDNXZXZVeWV3NVhGUG9zb0o0YzRYVVc1UEtxNk0zVTJWCk54eXd4WDZqZW5TdlVURFdTdWhaK3JtaWhERGNVc2NyNjJ3ZVg2aCs1djJQM1RmUWpJSlpodDFLU0RtRFRhZloKdDhCTVFOdHh6d2VTZjZvSDF2TXViR2JIb1BvOEVSUVBtSWllU2FLbG95M0NXVGFneXlzZ2cxcFdUQng1VVQzcApRZ3JqMjBxYUc0VzlIak13Q0xjQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZLekVnK0dnL09LTjZQNmNWSUtHVHFMQ3NkTG1NQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDaFFFUzdETzFlNHhuZmg1R2pFL3B2ampscFJQS2FnNnpLSWNNcGFFSWkvSnJ4ZGxSYwo0MVJHYlBoQWlIL25CR0RSMlcvU0drdnFCRGhNQ09rMUNwcnV5QWZoQUNzb1VXd3k1SUhqUENMTzlrbEtxRjFaCjBqMFN6a1psNWRqRDJVS2krdFArSFR1TE05WEh4U08rZzFqMDB2QnA1cXc4cUhMTHhFWW1iVkNSU0xqTm5RVisKeWV6U0JSNlVLbVRtVUowaUFzNUUrMzhHTzhzTlUydTBLMHdsQlZNN2U0VGlxNnhYWVNEUUlGcEg2VndpUlNXUApOa1dYRDljMDQ3K0xOcG14MmJESDNzaUxPYm1pSzhYTktRWnhJMG1reklhWnZoWThvWkpFZXNJUkoydVhzMGRUCi9lalhTTUFCS1pYbzgxczJqTmk5N3U3VHFGTXREdGp6RUc1eAotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://25E7D00A704AD0F217A6CFDC1A17CB3C.gr7.us-east-1.eks.amazonaws.com
+  name: arn:aws:eks:us-east-1:628740878687:cluster/test-dev
+contexts:
+- context:
+    cluster: arn:aws:eks:us-east-1:628740878687:cluster/test-dev
+    user: arn:aws:eks:us-east-1:628740878687:cluster/test-dev
+  name: arn:aws:eks:us-east-1:628740878687:cluster/test-dev
+current-context: arn:aws:eks:us-east-1:628740878687:cluster/test-dev
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:us-east-1:628740878687:cluster/test-dev
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - us-east-1
+      - eks
+      - get-token
+      - --cluster-name
+      - test-dev
+      command: aws
+      env:
+      - name: AWS_PROFILE
+        value: idp-techstack
