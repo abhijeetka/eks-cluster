@@ -44,6 +44,6 @@ resource "aws_instance" "ec2-instance" {
   key_name               = var.key_pair
 
   tags = {
-    //Name = "HelloWorld"
+    Name = "HelloWorld"
   }
 }
