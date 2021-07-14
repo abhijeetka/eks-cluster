@@ -13,3 +13,13 @@ variable "environment" {
 variable "team" {
   default = "devops"
 }
+
+variable "PATH_TO_PUBLIC_KEY" {
+  default = "./ssh-key.pub"
+}
+
+
+variable "key_pair" {
+  description = "Name of keypair to be configure"
+  default = ""
+}

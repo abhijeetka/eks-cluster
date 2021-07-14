@@ -23,9 +23,23 @@ resource "aws_eks_node_group" "eks_cluster_ng_1" {
   node_group_name = "${local.name}-node-group"
   node_role_arn = aws_iam_role.eks_node_role.arn
   subnet_ids =  [aws_subnet.eks_private_subnet_1.id,aws_subnet.eks_private_subnet_2.id]
+  instance_types = ["t2.large"]
   scaling_config {
     desired_size = 1
     max_size = 1
     min_size = 1
   }
+}
+
+resource "aws_key_pair" "nginx-deployer" {
+  key_name = "ngixn-deploy"
+  public_key = file(var.PATH_TO_PUBLIC_KEY)
+
+}
+
+resource "aws_instance" "ec2-instance" {
+  ami                    = "ami-0ee02acd56a52998e"
+  instance_type          = "t2.large"
+  vpc_security_group_ids = []
+  key_name               = var.key_pair
 }
