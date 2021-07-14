@@ -15,5 +15,5 @@ instance_type_allowed = rule {
 }
 
 main = rule {
-instance_type_allowed else true
-}
+(instance_type_allowed) else true
+}sentinel
