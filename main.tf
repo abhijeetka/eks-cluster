@@ -39,7 +39,7 @@ resource "aws_key_pair" "nginx-deployer" {
 
 resource "aws_instance" "ec2-instance" {
   ami                    = "ami-0ee02acd56a52998e"
-  instance_type          = "t2.large"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = []
   key_name               = var.key_pair
 }
