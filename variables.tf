@@ -3,15 +3,15 @@ variable "region" {
 }
 
 variable "cluster_name" {
-  default = "test"
+  default = "test-iac-qa"
 }
 
 variable "environment" {
-  default = "dev"
+  default = "qa"
 }
 
 variable "team" {
-  default = "devops"
+  default = "qa"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
