@@ -4,7 +4,7 @@ resource "aws_vpc" "eks_vpc" {
   enable_dns_hostnames = true
 
   tags = merge(local.tags,{
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${local.name}" = "shared"
   })
 }
 
@@ -15,7 +15,7 @@ resource "aws_subnet" "eks_public_subnet_1" {
   map_public_ip_on_launch = true
 
   tags = merge(local.tags,{
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${local.name}" = "shared"
     "kubernetes.io/role/elb"                      = "1"
   })
 }
@@ -26,7 +26,7 @@ resource "aws_subnet" "eks_public_subnet_2" {
   map_public_ip_on_launch = true
 
   tags = merge(local.tags,{
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${local.name}" = "shared"
     "kubernetes.io/role/elb"                      = "1"
   })
 }
@@ -38,7 +38,7 @@ resource "aws_subnet" "eks_private_subnet_1" {
   map_public_ip_on_launch = false
 
   tags = merge(local.tags,{
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${local.name}" = "shared"
     "kubernetes.io/role/internal-elb"             = "1"
   })
 }
@@ -50,7 +50,7 @@ resource "aws_subnet" "eks_private_subnet_2" {
   map_public_ip_on_launch = false
 
   tags = merge(local.tags,{
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${local.name}" = "shared"
     "kubernetes.io/role/internal-elb"             = "1"
   })
 }

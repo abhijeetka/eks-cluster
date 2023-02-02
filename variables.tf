@@ -3,7 +3,7 @@ variable "region" {
 }
 
 variable "cluster_name" {
-  default = "test-iac-qa"
+  default = "example"
 }
 
 variable "environment" {
